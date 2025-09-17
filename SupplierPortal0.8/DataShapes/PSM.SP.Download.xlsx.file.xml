@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ majorVersion="9"
+ minorVersion="2"
+ universal="">
+    <DataShapes>
+        <DataShape
+         baseDataShape=""
+         description=""
+         documentationContent=""
+         homeMashup=""
+         name="PSM.SP.Download.xlsx.file"
+         projectName="IKEA.SupplierPortal"
+         tags="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <FieldDefinitions>
+                <FieldDefinition
+                 aspect.friendlyName="Article Name"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="ArticleName"
+                 ordinal="1"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Latest SIR Date"
+                 aspect.isPrimaryKey="false"
+                 baseType="TEXT"
+                 description=""
+                 name="LatestSIRDate"
+                 ordinal="4"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Number"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Number"
+                 ordinal="2"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Received SIR"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="ReceivedSIR"
+                 ordinal="3"></FieldDefinition>
+            </FieldDefinitions>
+        </DataShape>
+    </DataShapes>
+</Entities>

@@ -1,0 +1,66 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    # Step 2: Set up Node.js environment
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: npm ci
+
+    # Step 4: Install Playwright Browsers
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    # Step 5: Install Oracle Instant Client
+    - name: Install Oracle Instant Client
+      run: |
+        sudo apt-get update && sudo apt-get install -y libaio1
+        wget https://download.oracle.com/otn_software/nt/instantclient/2360000/instantclient-basic-windows.x64-23.6.0.24.10.zip
+        unzip instantclient-basic-windows.x64-23.6.0.24.10 -d /opt/oracle
+        echo "/opt/oracle/instantclient_21_9" | sudo tee -a /etc/ld.so.conf.d/oracle-instantclient.conf
+        sudo ldconfig
+        export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_9:$LD_LIBRARY_PATH
+
+    # Step 6: Wait for Oracle Database to be available
+    - name: Wait for Oracle Database
+      run: |
+        npm install wait-on
+        npx wait-on --log-level verbose tcp:PPCRS581.ikeadt.com:1521
+      env:
+        WAIT_ON_TIMEOUT: 60000
+
+    # Step 7: Run Playwright Tests
+    - name: Run Playwright tests
+      run: npx playwright test
+      env:
+        DB_USER: PLUS_READONLY
+        DB_PASSWORD: PLUS_READONLY123
+        DB_CONNECT_STRING: "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=PPCRS581.ikeadt.com)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=PLUSPPE.IKEADT.COM)))"
+
+    # Step 8: Upload Playwright Test Report
+    - name: Upload Playwright Test Report
+      uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30

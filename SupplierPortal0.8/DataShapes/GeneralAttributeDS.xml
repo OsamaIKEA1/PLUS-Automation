@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ majorVersion="9"
+ minorVersion="2"
+ universal="">
+    <DataShapes>
+        <DataShape
+         baseDataShape=""
+         description=""
+         documentationContent=""
+         homeMashup=""
+         name="GeneralAttributeDS"
+         projectName="IKEA.SupplierPortal"
+         tags="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <FieldDefinitions>
+                <FieldDefinition
+                 aspect.friendlyName="Approved by"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Approved_By"
+                 ordinal="5"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Approved Date"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Approved_Date"
+                 ordinal="6"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Created by"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Created_By"
+                 ordinal="1"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Created On"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Created_On"
+                 ordinal="2"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Default Unit"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Default_Unit"
+                 ordinal="12"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Design case number"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Design_Case_number"
+                 ordinal="14"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Inactivated By"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Inactivated_By"
+                 ordinal="7"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Inactivation Date"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Inactivation_Date"
+                 ordinal="8"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Item Type"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Item_Type"
+                 ordinal="13"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Last Modified"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Last_Modified"
+                 ordinal="4"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Modified by"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Modified_By"
+                 ordinal="3"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Old CAD referance"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Old_CAD_referance"
+                 ordinal="15"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Replaced by"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Replaced_By"
+                 ordinal="9"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Replaces"
+                 ordinal="10"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Revision Comment"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Revision_Comment"
+                 ordinal="11"></FieldDefinition>
+            </FieldDefinitions>
+        </DataShape>
+    </DataShapes>
+</Entities>

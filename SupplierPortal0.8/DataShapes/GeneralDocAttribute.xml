@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ majorVersion="9"
+ minorVersion="2"
+ universal="">
+    <DataShapes>
+        <DataShape
+         baseDataShape=""
+         description=""
+         documentationContent=""
+         homeMashup=""
+         name="GeneralDocAttribute"
+         projectName="IKEA.SupplierPortal"
+         tags="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <FieldDefinitions>
+                <FieldDefinition
+                 aspect.friendlyName="Approved By"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Approved_By"
+                 ordinal="5"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Approved date"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Approved_date"
+                 ordinal="6"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Created By"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Created_By"
+                 ordinal="1"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Department"
+                 ordinal="2"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Inactivated by"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Inactivated_by"
+                 ordinal="8"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Inactivation Status"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Inactivation_Status"
+                 ordinal="9"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Last Modified"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="LastModified"
+                 ordinal="4"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Life Cycle Template"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Life_Cycle_Template"
+                 ordinal="7"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Modified By"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Modified_By"
+                 ordinal="3"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Replaced by"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Replaced_by"
+                 ordinal="10"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Replaces"
+                 ordinal="12"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Revision Comment"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Revision_Comment"
+                 ordinal="11"></FieldDefinition>
+            </FieldDefinitions>
+        </DataShape>
+    </DataShapes>
+</Entities>

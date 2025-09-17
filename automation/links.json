@@ -1,0 +1,5 @@
+{
+    "purchasingPPE10EnviromentLink": "https://testppe10.plusnavigate.ikeadt.com/Thingworx/Runtime/index.html?mashup=Purchasing.View.V1",
+    "supplierPPE10EnviromentLink": "https://testppe10.plusnavigate.ikeadt.com/Thingworx/Runtime/index.html?mashup=IKEA.Supplier.Portal.V1",  
+    "windchillPPE10EnviromentLink":"https://testppe10.plus.ikeadt.com/PLUS/"
+}

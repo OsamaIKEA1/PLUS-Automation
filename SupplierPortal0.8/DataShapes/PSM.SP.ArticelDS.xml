@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ majorVersion="9"
+ minorVersion="2"
+ universal="">
+    <DataShapes>
+        <DataShape
+         baseDataShape=""
+         description=""
+         documentationContent=""
+         homeMashup=""
+         name="PSM.SP.ArticelDS"
+         projectName="IKEA.SupplierPortal"
+         tags="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <FieldDefinitions>
+                <FieldDefinition
+                 aspect.friendlyName="Approved by"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Approved_by"
+                 ordinal="20"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Approved date"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Approved_date"
+                 ordinal="21"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Context"
+                 ordinal="7"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Created by"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Created_by"
+                 ordinal="16"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Created on"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Created_on"
+                 ordinal="17"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Default unit"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Default_unit"
+                 ordinal="22"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Description"
+                 ordinal="8"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Global sales end day"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Global_sales_end_day"
+                 ordinal="14"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Global sales start day"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Global_sales_start_day"
+                 ordinal="13"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="HFB"
+                 ordinal="9"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Last Modified"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="LastModified"
+                 ordinal="19"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Life Cycle Template"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Life_Cycle_Template"
+                 ordinal="23"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Location"
+                 ordinal="6"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Main product type"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Main_product_type"
+                 ordinal="11"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Modified by"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Modified_by"
+                 ordinal="18"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Number"
+                 ordinal="3"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Product area"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Product_area"
+                 ordinal="10"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Product Name"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Product_Name"
+                 ordinal="2"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Product type"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Product_type"
+                 ordinal="12"></FieldDefinition>
+                <FieldDefinition
+                 aspect.friendlyName="Responsible requirement engineer"
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Responsible_requirement_engineer"
+                 ordinal="15"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="State"
+                 ordinal="4"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Status"
+                 ordinal="5"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description=""
+                 name="Version"
+                 ordinal="1"></FieldDefinition>
+            </FieldDefinitions>
+        </DataShape>
+    </DataShapes>
+</Entities>
