@@ -120,3 +120,145 @@ export async function searchForIrWithArticleNumber(page, articleNumber) {
   await locators.searchButtonInAdvancedSearch(page).click();
   await page.waitForTimeout(3 * 1000);
 }
+
+/**
+ * @description This function clones a locator by creating a new locator with the same selector.
+ * @param {*} page
+ * @param {*} locator to be cloned
+ * @returns
+ */
+async function cloneLocator(page, locator) {
+  const selector = locator._selector;
+  return page.locator(selector);
+}
+
+/**
+ * * @description This function waits for all elements to be loaded on the page.
+ * @param {*} page
+ * @returns
+ * */
+export async function basicWaitForAllLoaded(page) {
+  await Promise.all([page.waitForLoadState("domcontentloaded"), page.waitForLoadState("networkidle"), page.waitForLoadState("load")]);
+}
+
+/**
+ * @description This function ensures that a locator is visible on the page, retrying if necessary.
+ * @param {*} page
+ * @param {*} locator is the locator to be checked for visibility
+ * @param {*} previousAction is a function that will be executed after the page is reloaded if needed
+ * @param {*} maxRetries is the maximum number of retries to check for visibility
+ * @returns
+ */
+export async function ensureVisible(page, locator, previousAction, maxRetries = 60) {
+  await basicWaitForAllLoaded(page);
+  let attempt = 0;
+  while (attempt < maxRetries) {
+    const newLocator = await cloneLocator(page, locator);
+    try {
+      /*if (attempt === 30 || attempt === 45) {
+        await page.reload();
+        await basicWaitForAllLoaded(page);
+        if (previousAction) {
+          await previousAction(); // Execute after reload
+        }
+      }*/
+      await newLocator.waitFor({
+        state: "visible",
+        timeout: 1000,
+      });
+      return true;
+    } catch (error) {
+      attempt++;
+      if (attempt === maxRetries) {
+        throw error;
+      }
+    }
+  }
+}
+
+/**
+ * @description This function wait until button of the page is visible and click it.
+ * @param {*} page
+ * @param {*} locator SCP page button locator
+ */
+export async function navigateToPage(page, locator) {
+  await locator.waitFor({ state: "visible" });
+  await locator.click();
+  await page.waitForLoadState("networkidle");
+}
+
+/**
+ * @description This function fetches the product structure from the API and normalizes the part names and IDs.
+ * @param {*} productStructureUrl
+ * @param {*} apiRequestContext
+ * @param {*} csrfToken
+ * @param {*} effectiveDate
+ * @param {*} EFFCONTEXTOID
+ * @returns {partsIDs, normalizedPartNamefromApi, normalizedcomponentsNameFromApi} - An object containing the part IDs, normalized part name from API, and normalized component names from API.
+ */
+export async function FetchProductStructureFromApi(productStructureUrl, apiRequestContext, csrfToken, effectiveDate, EFFCONTEXTOID) {
+  var normalizedcomponentsNameFromApi = [];
+
+  const structureResponse = await apiRequestContext.post(productStructureUrl, {
+    headers: {
+      CSRF_NONCE: csrfToken,
+      //'Content-Type': 'application/json',
+    },
+    data: {
+      NavigationCriteria: {
+        ApplyToTopLevelObject: true,
+        UseDefaultForUnresolved: false,
+        SharedToAll: false,
+        HideUnresolvedDependents: false,
+        Centricity: false,
+        ApplicableType: "wt.part.WTPart",
+        ConfigSpecs: [
+          {
+            "@odata.type": "#PTC.NavCriteria.WTPartEffectivityDateConfigSpec",
+            EffectiveDate: effectiveDate,
+            EffectiveContext: `${EFFCONTEXTOID}`,
+            View: "Design",
+            Variation1: null,
+            Variation2: null,
+          },
+        ],
+        Filters: [],
+      },
+    },
+  });
+
+  expect(structureResponse.ok()).toBeTruthy();
+  var structureData = await structureResponse.json();
+
+var partsIDs = [];
+
+// Add top-level part
+if (structureData.Part && structureData.Part.ID && structureData.Part.ObjectType) {
+  partsIDs.push([structureData.Part.ID, structureData.Part.ObjectType]);
+}
+
+// Add components
+structureData.Components.forEach((component) => {
+  if (component.Part != null && component.Part.ID && component.Part.ObjectType) {
+    partsIDs.push([component.Part.ID, component.Part.ObjectType]);
+  }
+});
+
+await partsIDs.reverse();
+
+  var normalizedPartNamefromApi = structureData.Part.Name.replace(/\s+/g, " ").trim(); // normlized part name
+
+  var componentsNamesFromApi = structureData.Components.filter((component) => component.Part && component.Part.Name) // Exclude components with null Part.Name
+    .map((component) => component.Part.Name);
+
+  componentsNamesFromApi.forEach((componentName) => {
+    // Normalize component name and partsArray values by trimming and reducing multiple spaces
+    normalizedcomponentsNameFromApi.push(componentName.replace(/\s+/g, " ").trim());
+  });
+
+  return {
+    partsIDs: partsIDs,
+    normalizedPartNamefromApi: normalizedPartNamefromApi,
+    normalizedcomponentsNameFromApi: normalizedcomponentsNameFromApi,
+  };
+}
