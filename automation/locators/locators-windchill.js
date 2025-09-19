@@ -36,4 +36,20 @@ export const locators = {
   irNumberMyTasks: (page) => page.locator('td.attributePanel-value[attrid="name"]').textContent(),
 
   taskRowByName: (page, taskName) => page.locator('[id="projectmanagement.overview.assignments.list"]').locator('.x-grid3-row').filter({ has: page.locator('.x-grid3-col-ASSIGNMENT_NAME', { hasText: taskName }) }).first(),
+
+
+  //NEW
+  //Home page & Browse Tab Entries
+  browseButtonHomePage: (page) => page.locator("#object_main_navigation_nav"), //Browse Tab Button on Homepage
+  recentProductsTab: (page) =>
+    page.locator("#object_main_navigation__productNavigation"), //Recent Products in Browse Tab
+  browseListings: (page, searchEntry) => page.locator(".x-tree-node").filter({ hasText: searchEntry }).locator(".x-tree-node-anchor"), //Navigates to specified searchEntry parent category in a recent project, library tab.. 
+  subBrowseListings: (page, nameOfSubListing) => page.locator(".x-tree-node").filter({ hasText: nameOfSubListing }).locator(".x-tree-node-anchor"), //Navigates to specified nameOfSubListing child category under parent category
+  testAutomationFolderBeds: (page) => page.locator('.x-grid3-cell-inner .x-grid3-col-folderName').filter({ hasText: "TestAutomation" }),
+  projectManagerHomePage: (page) => page.locator("#projectmanagement.overview.assignments.list.toolBar"),
+
+
+
+
+
 };

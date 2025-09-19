@@ -47,6 +47,24 @@ async function fillLoginFormIfNeeded(page) {
   }
 }
 
+//NEW 
+  async function navigateToIkeaProductsFolder() {
+    await locators.browseButtonHomePage(this.page).click();
+    await locators.recentProductsTab(this.page).click();
+    await locators.browseListings(this.page, "BEDS").nth(1).click();
+    await locators
+      .subBrowseListings(this.page, "Folders")
+      .nth(2)
+      .click();
+  }
+//NEW
+  async function navigateToTestAutomationFolder(){
+    
+
+
+  }
+
+
 export async function searchForIrWithArticleNumber(page, articleNumber) {
   await locators.sideSearchButton(page).click();
   await locators.advancedSearchButton(page).click();
