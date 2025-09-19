@@ -3,7 +3,6 @@ const { test, expect } = require("@playwright/test");
 const dynamicValues = require("../dynamic-values.js");
 import { locators } from "../locators/locators-windchill.js";
 const links = require("../links.json");
-import * as sharedHelper from "./shared-helpers.js";
 
 export async function performLoginWithSteps(page) {
   // Navigate to the Purchasing login page

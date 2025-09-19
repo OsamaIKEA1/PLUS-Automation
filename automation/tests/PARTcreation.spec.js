@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
 import { helper } from "../helper-functions/helper-windchill.js";
-let credentials = require("../automation/credentials.json");
+let credentials = require("../credentials.json");
 import { locators } from "../locators/locators-windchill.js";
 
 
@@ -17,7 +17,7 @@ test("Basic Part Creation", async({page}) => {
 
     //Navigate to browse -> Products -> BEDS -> Folders
     test.step.skip("Navigator to Folders", async() =>{
-
+       //await helper.navigaToTestAutomationFolder(page);
 
     });
 
@@ -40,7 +40,8 @@ test("Classify and Define Part Creation Validation", async ({page}) => {
     test.step("Login to Windchill", async() => {
         await helper.performLoginWithSteps(page);
         await helper.fillLoginFormIfNeeded(page);
-        
+        expect(locators.projectManagerHomePage(page)).toBeVisible();
+
     });
 
     //Navigate to browse -> Products -> BEDS -> Folders
